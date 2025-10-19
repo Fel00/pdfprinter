@@ -1,0 +1,86 @@
+/* Variáveis globais */
+:root {
+    --primary-color: #23413a;
+    --secondary-color: #ffb347;
+    --bg-color: #f5f5f5;
+    --text-color: #333;
+    --hover-color: #1a2f2a;
+    --border-color: #ddd;
+    --success-color: #064;
+    --error-color: #600;
+    --white: #fff;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos base */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    padding-top: 60px;
+    min-height: 100vh;
+}
+
+/* Container padrão */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+/* Utilitários */
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+/* Mensagens */
+.msg-success {
+    background: #e6ffed;
+    border: 1px solid #8fe0b2;
+    padding: 8px;
+    color: var(--success-color);
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.msg-error {
+    background: #ffe6e6;
+    border: 1px solid #f2a0a0;
+    padding: 8px;
+    color: var(--error-color);
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
