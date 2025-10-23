@@ -217,7 +217,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <?php include 'header.php'; ?>
 <style>
     .form-box {
-        max-width: 700px;
+        max-width: 1000px;
         margin: 30px auto;
         background: #fff;
         padding: 20px;
@@ -296,7 +296,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     .item-image {
-        flex: 0 0 150px;
+        flex: 0 0 200px;
     }
 
     .item-details {

@@ -1,0 +1,93 @@
+/* Estilos específicos para o PDF do inventário */
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: #333;
+    line-height: 1.6;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header .logo {
+    max-width: 150px;
+    margin-bottom: 10px;
+}
+
+.header h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #333;
+}
+
+.info-section {
+    margin-bottom: 20px;
+}
+
+.info-section h2 {
+    font-size: 18px;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.info-table {
+    width: 100%;
+    margin-bottom: 15px;
+    border-collapse: collapse;
+}
+
+.info-table td {
+    padding: 5px;
+}
+
+.materials-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.materials-table th,
+.materials-table td {
+    border: 1px solid #333;
+    padding: 8px;
+    text-align: left;
+}
+
+.materials-table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+.materials-table .checkbox {
+    text-align: center;
+    font-family: DejaVu Sans;
+    font-size: 14px;
+}
+
+.materials-table .obs {
+    min-height: 25px;
+}
+
+.signatures {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.signature-field {
+    text-align: center;
+    width: 45%;
+}
+
+.signature-field .line {
+    border-top: 1px solid #333;
+    margin-bottom: 5px;
+}
+
+.signature-field .label {
+    font-size: 12px;
+}

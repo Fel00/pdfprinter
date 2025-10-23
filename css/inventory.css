@@ -91,3 +91,76 @@
     margin-top: 8px;
     border-radius: 4px;
 }
+
+/* Estilos para o formulário de baixa de inventário */
+.material-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+}
+
+.material-info {
+    flex: 1;
+}
+
+.material-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.material-quantity {
+    width: 100px;
+}
+
+.material-remove {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.material-remove:hover {
+    background: #c82333;
+}
+
+.material-select {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#materiais-container {
+    margin-bottom: 1rem;
+}
+
+.quantidade-error {
+    color: #dc3545;
+    font-size: 0.9em;
+    margin-top: 0.25rem;
+}
+
+/* Ajustes para o formulário de baixa */
+.form-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-section {
+    margin-bottom: 30px;
+}
