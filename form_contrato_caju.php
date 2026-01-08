@@ -85,15 +85,6 @@
                     </label>
                 </div>
 
-                <!-- Ornamentação -->
-                <div class="form-group">
-                    <label>Ornamentação:</label>
-                    <div id="ornamentacao-container" class="menu-items">
-                        <input type="text" name="ornamentacao[]" placeholder="Adicione um item de ornamentação">
-                    </div>
-                    <button type="button" class="add-item" onclick="addMenuItem('ornamentacao-container', 'ornamentacao[]')">+ Adicionar Item</button>
-                </div>
-
                 <!-- Louças -->
                 <div class="form-group">
                     <label for="loucas">Louças e material:</label>

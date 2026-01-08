@@ -53,7 +53,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $mesa_fixa = isset($_POST['mesa_fixa']) ? array_filter($_POST['mesa_fixa']) : [];
     $volantes = isset($_POST['volantes']) ? array_filter($_POST['volantes']) : [];
     $bebidas = isset($_POST['bebidas']) ? $_POST['bebidas'] : false;
-    $ornamentacao = isset($_POST['ornamentacao']) ? array_filter($_POST['ornamentacao']) : [];
     $loucas = isset($_POST['loucas']) ? trim($_POST['loucas']) : '';
     $equipe = isset($_POST['equipe']) ? trim($_POST['equipe']) : '';
     

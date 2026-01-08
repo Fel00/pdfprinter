@@ -16,8 +16,6 @@ $html = "
     <br>
     
     <p><strong>$tipoBufet</strong></p>
-    <p>$descricao_bufet</p>
-    <br>
     
     <p><strong>Mesa fixa – $tipoBufet</strong></p>
     " . implode("\n", array_map(function($item) {
@@ -30,10 +28,6 @@ $html = "
     }, $volantes)) . "
     
     " . ($bebidas ? "<p>• Bebidas não alcoólicas</p>" : "") . "
-    
-    " . (!empty($ornamentacao) ? "<p>• Ornamentação</p>" . implode("\n", array_map(function($item) {
-        return "<p>$item</p>";
-    }, $ornamentacao)) : "") . "
     
     " . (!empty($loucas) ? "<p>• Louças e material para realizarmos o serviço</p><p>$loucas</p>" : "") . "
     
