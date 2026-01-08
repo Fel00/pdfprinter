@@ -50,9 +50,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $horarioInicio = htmlspecialchars($_POST['horario_inicio']);
     $horarioConclusao = htmlspecialchars($_POST['horario_conclusao']);
     $horarioChegada = htmlspecialchars($_POST['horario_chegada']);
-    $valor_bufet = $_POST['valor_bufet'];
-    $valor_deslocamento = $_POST['valor_deslocamento'];
-    $valor_total = $_POST['valor_total'];
+
+    // Valores: receber bufet e deslocamento e recalcular servidor-side (aceita formatos como "R$ 1.234,56" ou "1234.56")
+    $valor_bufet_raw = isset($_POST['valor_bufet']) ? $_POST['valor_bufet'] : '0';
+    $valor_deslocamento_raw = isset($_POST['valor_deslocamento']) ? $_POST['valor_deslocamento'] : '0';
+
+    function parseCurrency($str)
+    {
+        $str = trim($str);
+        // Remove qualquer caractere que não seja dígito, ponto, vírgula ou sinal
+        $str = preg_replace('/[^0-9,\.\-]/u', '', $str);
+        // Se houver separador de milhares (ponto) e separador decimal (vírgula), remover pontos e trocar vírgula por ponto
+        if (strpos($str, ',') !== false && strpos($str, '.') !== false) {
+            $str = str_replace('.', '', $str);
+            $str = str_replace(',', '.', $str);
+        } elseif (strpos($str, ',') !== false && strpos($str, '.') === false) {
+            // Assume vírgula como separador decimal
+            $str = str_replace(',', '.', $str);
+        }
+        return is_numeric($str) ? (float) $str : 0.0;
+    }
+
+    function formatBR($num)
+    {
+        return 'R$ ' . number_format($num, 2, ',', '.');
+    }
+
+    $valor_bufet_num = parseCurrency($valor_bufet_raw);
+    $valor_deslocamento_num = parseCurrency($valor_deslocamento_raw);
+    $valor_total_num = $valor_bufet_num + $valor_deslocamento_num;
+
+    $valor_bufet = formatBR($valor_bufet_num);
+    $valor_deslocamento = formatBR($valor_deslocamento_num);
+    $valor_total = formatBR($valor_total_num);
+
     $contratadaNome = "FEIJU DELIVERY";
     $cnpj = "23.639.340/0001-62";
     $contratadaEndereco = "Rua Delmiro Gouveia, 1281, Varjota, Fortaleza, Ceará";

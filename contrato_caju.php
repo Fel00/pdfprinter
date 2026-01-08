@@ -65,7 +65,7 @@ $html = "
     <br>
     
     <h2>DO PREÇO E DAS CONDIÇÕES DE PAGAMENTO</h2>
-    <p><strong>Cláusula 10ª.</strong> O serviço contratado no presente instrumento será remunerado pela quantia de $valor_total, devendo ser paga a quantia correspondente à 50% (cinquenta por cento) do valor no ato da assinatura do presente instrumento e o restante até o dia do evento.</p>
+    <p><strong>Cláusula 10ª.</strong> O serviço contratado no presente instrumento será remunerado pela quantia de $valor_bufet pelo valor do bufet, mais $valor_deslocamento pelo valor do deslocamento, totalizando uma quantia de $valor_total, devendo ser paga a quantia correspondente à 50% (cinquenta por cento) do valor no ato da assinatura do presente instrumento e o restante até o dia do evento.</p>
     
     <p><strong>Parágrafo único.</strong> O pagamento deverá ocorrer através de transferência bancária, na seguinte conta:</p>
     <p><strong>" . getConfigCaju('banco') . "<br>
