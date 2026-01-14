@@ -33,10 +33,10 @@ $mpdf->WriteHTML($css, \Mpdf\HTMLParserMode::HEADER_CSS);
 
 // Conteúdo HTML
 $html = '
-<div class="header">
-    <img src="img/caju.png" class="logo">
+
     <h1>Checklist de Materiais</h1>
-</div>
+    <img src="img/caju.png" class="logo" alt="Logo Caju" style="width:60px; height:auto;">
+    
 
 <div class="info-section">
     <h2>Informações do Evento</h2>
