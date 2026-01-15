@@ -7,9 +7,17 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 function formataDataExtenso($data)
 {
-    setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf8');
-    $timestamp = strtotime($data);
-    return strftime('%d de %B de %Y', $timestamp);
+    $dt = new DateTime($data);
+    $fmt = new IntlDateFormatter(
+        'pt_BR',
+        IntlDateFormatter::LONG,
+        IntlDateFormatter::NONE,
+        'America/Sao_Paulo',
+        IntlDateFormatter::GREGORIAN,
+        "d 'de' MMMM 'de' y"
+    );
+
+    return $fmt->format($dt);
 }
 function censurarTelefone($telefone)
 {
