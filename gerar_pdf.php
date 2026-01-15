@@ -4,7 +4,7 @@ use Mpdf\Mpdf;
 
 function formataDataExtenso($data)
 {
-    $dt = new DateTime($data);
+    $dt = new DateTime($data, new DateTimeZone('America/Sao_Paulo'));
     $fmt = new IntlDateFormatter(
         'pt_BR',
         IntlDateFormatter::LONG,
