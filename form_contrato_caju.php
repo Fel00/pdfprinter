@@ -17,7 +17,7 @@
                     <input type="text" id="contratante" name="contratante" required>
                 </div>
                 <div class="form-group">
-                    <label for="cpf">CPF:</label>
+                    <label for="cpf">CPF ou CNPJ:</label>
                     <input type="text" id="cpf" name="cpf" required>
                 </div>
                 <div class="form-group">

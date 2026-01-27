@@ -5,7 +5,7 @@ $html = "
 
     <h1>CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE FORNECIMENTO DE BUFFET</h1>
     <br>
-    <p><strong>CONTRATANTE: $contratante</strong> , inscrita no CPF sob o nº $cpf, e nº de telefone $telefoneCensurado. O evento realizar-se-á no Endereço: $endereco.</p>
+    <p><strong>CONTRATANTE: $contratante</strong> , inscrita no CPF/CNPJ sob o nº $cpf, e nº de telefone $telefoneCensurado. O evento realizar-se-á no Endereço: $endereco.</p>
     <p><strong>CONTRATADA: $contratadaNome</strong> , pessoa jurídica de direito privado, inscrita no CNPJ sob n. $cnpj, com sede na $contratadaEndereco, neste ato representada pela sócia $representante.</p>
     
     <p>As partes acima identificadas têm, entre si, justo e acertado o presente Contrato de Prestação de Serviços de Fornecimento de Buffet, que se regerá pelas cláusulas seguintes e pelas condições de preço, forma e termo de pagamento descritas no presente.</p>
