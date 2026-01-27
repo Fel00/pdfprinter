@@ -17,7 +17,13 @@
                     <input type="text" id="contratante" name="contratante" required>
                 </div>
                 <div class="form-group">
-                    <label for="cpf">CPF ou CNPJ:</label>
+                    <label>
+                        <input type="checkbox" id="useCnpj" name="useCnpj">
+                        Usar CNPJ
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="cpf" id="cpfLabel">CPF:</label>
                     <input type="text" id="cpf" name="cpf" required>
                 </div>
                 <div class="form-group">
