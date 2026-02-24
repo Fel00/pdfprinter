@@ -106,7 +106,7 @@ $html = "
         
         <br><br>
         
-        <img src='img/assinatura1.png' alt='Assinatura Contratada' style='width: 190px; height: auto; margin: 00px 0;'>
+        <img src='img/assinatura1.png' alt='Assinatura Contratada' style='width: 290px; height: auto; margin: 00px 0;'>
         <p>_____________________________________</p>
         <p><strong>$contratadaNome</strong></p>
         
