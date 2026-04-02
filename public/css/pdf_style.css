@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 187mm;
+    height: 334mm;
+    background-color: #2B5144;
+}
+.page {
+    width: 187mm;
+    height: 334mm;
+    display: block;
+}
+img {
+    display: block;
+}
+.pagina-orcamento {
+    width: 187mm;
+    height: 334mm;
+    background-color: #FFF5F2;
+    padding: 40mm 20mm;
+    font-family: Arial, sans-serif;
+}
+.titulo-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 50mm;
+    width: 100%;
+}
+.titulo-orcamento {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 72pt;
+    color: #23413a;
+    font-weight: 300;
+    line-height: 1.1;
+    flex: 1;
+}
+.logo-caju {
+    display: flex;
+    align-items: flex-start;
+    margin-left: 75mm;
+    margin-top: -60mm;
+    width: 30%;
+}
+.logo-caju img {
+    width: 20mm;
+    height: auto;
+    max-height: 30mm;
+}
+.evento-info {
+    text-align: center;
+    color: #23413a;
+}
+.evento-nome {
+    font-size: 24pt;
+    margin-bottom: 40mm;
+}
+.evento-data {
+    font-size: 20pt;
+    margin-bottom: 10mm;
+}
+.evento-pessoas {
+    font-size: 18pt;
+    margin-bottom: 10mm;
+}
+.evento-inicio {
+    font-size: 18pt;
+    margin-bottom: 10mm;
+}
+.evento-inicio span {
+    color: #23413a;
+    font-weight: bold;
+}
+.evento-local {
+    font-size: 20pt;
+    margin-top: 40mm;
+}
+.pagina-cardapio {
+    width: 187mm;
+    height: 334mm;
+    background-color: #FFF5F2;
+    padding: 14mm;
+    font-family: "Times New Roman", Times, serif;
+    color: #23413a;
+}
+.titulo-cardapio {
+    font-size: 20pt;
+    color: #23413a;
+    margin-bottom: 15mm;
+}
+.secao-cardapio {
+    margin-bottom: 10mm;
+}
+.secao-titulo {
+    font-size: 16pt;
+    color: #23413a;
+    margin-bottom: 5mm;
+}
+.item-cardapio {
+    font-size: 14pt;
+    color: #23413a;
+    margin-bottom: 1mm;
+    margin-left: 3mm;
+}
+.servicos-lista {
+    margin-top: 2mm;
+}
+.servico-titulo {
+    font-size: 16pt;
+    color: #23413a;
+    margin-bottom: 1mm;
+    margin-top: 3mm;
+    font-weight: bold;
+}
+.servico-item {
+    font-size: 12pt;
+    color: #23413a;
+    margin-bottom: 1mm;
+    margin-left: 3mm;
+}
+.pagina-valores {
+    width: 187mm;
+    height: 334mm;
+    position: relative;
+    color: #ffffff;
+    font-family: "Times New Roman", Times, serif;
+    background: url("img/caju/pag6.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+.valores-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 30mm 15mm;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.titulo-valores {
+    font-size: 32pt;
+    margin-bottom: 15mm;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 3mm;
+    color: #000000;
+    align-self: center;
+}
+.valor-principal {
+    text-align: center;
+    margin-bottom: 1mm;
+    align-self: center;
+}
+.valor-pessoa {
+    font-size: 24pt;
+    margin-bottom: 5mm;
+}
+.valor-destaque {
+    font-size: 36pt;
+    font-weight: bold;
+}
+.valor-total {
+    text-align: center;
+    margin-bottom: 5mm;
+    align-self: center;
+}
+.total-texto {
+    font-size: 20pt;
+    margin-bottom: 4mm;
+}
+.total-valor {
+    font-size: 28pt;
+    font-weight: bold;
+    margin-bottom: 1mm;
+}
+.deslocamento {
+    text-align: center;
+    font-size: 20pt;
+    margin-bottom: 20mm;
+}
+.pagamento {
+    text-align: left;
+    margin-bottom: 15mm;
+    color: #000000;
+    margin-left: 60mm;
+}
+.forma-pagamento {
+    font-size: 18pt;
+    margin-bottom: 5mm;
+    color: #000000;
+}
+.condicao-pagamento {
+    font-size: 18pt;
+    margin-bottom: 5mm;
+    color: #000000;
+}
+.observacao {
+    text-align: center;
+    font-size: 16pt;
+    font-style: italic;
+    color: #000000;
+    margin-left: 50mm;
+} 

@@ -1,0 +1,111 @@
+/* Containers de formulário */
+.form-container {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.form-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+/* Campos de formulário */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+    transform: scale(1.2);
+}
+
+/* Botões */
+.submit-btn,
+.add-item,
+.btn {
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.add-item {
+    padding: 5px 10px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.btn:hover,
+.submit-btn:hover,
+.add-item:hover {
+    background: var(--hover-color);
+}
+
+/* Grid de horários */
+.horarios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+/* Menu items */
+.menu-items {
+    margin-bottom: 10px;
+}
+
+/* Placeholder styles */
+input::placeholder,
+textarea::placeholder {
+    color: #999;
+}
+
+/* Focus styles */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(35, 65, 58, 0.1);
+}

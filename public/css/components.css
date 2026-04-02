@@ -1,0 +1,108 @@
+/* Variáveis globais */
+:root {
+    --primary-color: #23413a;
+    --secondary-color: #ffb347;
+    --bg-color: #f5f5f5;
+    --text-color: #333;
+    --hover-color: #1a2f2a;
+}
+
+/* Reset e base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    padding-top: 60px;
+    min-height: 100vh;
+}
+
+/* Container padrão */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Formulários e cards */
+.form-container, .form-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Botões */
+.submit, .btn {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit:hover, .btn:hover {
+    background: var(--hover-color);
+}
+
+/* Mensagens */
+.msg-success {
+    background: #e6ffed;
+    border: 1px solid #8fe0b2;
+    padding: 8px;
+    color: #064;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.msg-error {
+    background: #ffe6e6;
+    border: 1px solid #f2a0a0;
+    padding: 8px;
+    color: #600;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
