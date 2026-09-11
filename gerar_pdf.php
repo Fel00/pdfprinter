@@ -5,9 +5,17 @@ use Mpdf\Mpdf;
 
 function formataDataExtenso($data)
 {
-    setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf8');
-    $timestamp = strtotime($data);
-    return strftime('%d de %B de %Y', $timestamp);
+    $dt = new DateTime($data, new DateTimeZone('America/Sao_Paulo'));
+    $fmt = new IntlDateFormatter(
+        'pt_BR',
+        IntlDateFormatter::LONG,
+        IntlDateFormatter::NONE,
+        'America/Sao_Paulo',
+        IntlDateFormatter::GREGORIAN,
+        "d 'de' MMMM 'de' y"
+    );
+
+    return $fmt->format($dt);
 }
 function censurarTelefone($telefone)
 {
@@ -55,12 +63,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $valor_bufet = $_POST['valor_bufet'];
     $valor_deslocamento = $_POST['valor_deslocamento'];
     $valor_total = $_POST['valor_total'];
-    $observacao = isset($_POST['observacao']) ? trim($_POST['observacao']) : '';
-    $observacao = !empty($observacao) ? htmlspecialchars($observacao, ENT_QUOTES, 'UTF-8') : '';
-    $contratadaNome = getConfigFeiju('nome');
-    $cnpj = getConfigFeiju('cnpj');
-    $contratadaEndereco = getConfigFeiju('endereco');
-    $representante = getConfigFeiju('representante');
+    $contratadaNome = "FEIJU DELIVERY";
+    $cnpj = "23.639.340/0001-62";
+    $contratadaEndereco = "Rua Delmiro Gouveia, 1281, Varjota, Fortaleza, Ceará";
+    $representante = "JULIANA PEREIRA GOUVEIA";
 
     $dataAtual = date('d-m-Y');
     $nomeArquivo = "{$contratante}_{$dataAtual}.pdf";

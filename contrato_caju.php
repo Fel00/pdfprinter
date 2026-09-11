@@ -5,7 +5,7 @@ $html = "
 
     <h1>CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE FORNECIMENTO DE BUFFET</h1>
     <br>
-    <p><strong>CONTRATANTE: $contratante</strong> , inscrita no CPF sob o nº $cpf, e nº de telefone $telefoneCensurado. O evento realizar-se-á no Endereço: $endereco.</p>
+    <p><strong>CONTRATANTE: $contratante</strong> , inscrita no CPF/CNPJ sob o nº $cpf, e nº de telefone $telefoneCensurado. O evento realizar-se-á no Endereço: $endereco.</p>
     <p><strong>CONTRATADA: $contratadaNome</strong> , pessoa jurídica de direito privado, inscrita no CNPJ sob n. $cnpj, com sede na $contratadaEndereco, neste ato representada pela sócia $representante.</p>
     
     <p>As partes acima identificadas têm, entre si, justo e acertado o presente Contrato de Prestação de Serviços de Fornecimento de Buffet, que se regerá pelas cláusulas seguintes e pelas condições de preço, forma e termo de pagamento descritas no presente.</p>
@@ -16,8 +16,6 @@ $html = "
     <br>
     
     <p><strong>$tipoBufet</strong></p>
-    <p>$descricao_bufet</p>
-    <br>
     
     <p><strong>Mesa fixa – $tipoBufet</strong></p>
     " . implode("\n", array_map(function ($item) {
@@ -65,7 +63,7 @@ $html = "
     <br>
     
     <h2>DO PREÇO E DAS CONDIÇÕES DE PAGAMENTO</h2>
-    <p><strong>Cláusula 10ª.</strong> O serviço contratado no presente instrumento será remunerado pela quantia de $valor_total, devendo ser paga a quantia correspondente à 50% (cinquenta por cento) do valor no ato da assinatura do presente instrumento e o restante até o dia do evento.</p>
+    <p><strong>Cláusula 10ª.</strong> O serviço contratado no presente instrumento será remunerado pela quantia de $valor_bufet pelo valor do bufet, mais $valor_deslocamento pelo valor do deslocamento, totalizando uma quantia de $valor_total, devendo ser paga a quantia correspondente à 50% (cinquenta por cento) do valor no ato da assinatura do presente instrumento e o restante até o dia do evento.</p>
     
     <p><strong>Parágrafo único.</strong> O pagamento deverá ocorrer através de transferência bancária, na seguinte conta:</p>
     <p><strong>" . getConfigCaju('banco') . "<br>
@@ -114,7 +112,8 @@ $html = "
         
         <br><br>
         
-        <p>______________________________________</p>
+        <img src='img/assinatura1.png' alt='Assinatura Contratada' style='width: 290px; height: auto; margin: 00px 0;'>
+        <p>_____________________________________</p>
         <p><strong>$contratadaNome</strong></p>
         
         <br><br>

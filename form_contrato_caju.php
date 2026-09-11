@@ -18,7 +18,13 @@
                     <input type="text" id="contratante" name="contratante" required>
                 </div>
                 <div class="form-group">
-                    <label for="cpf">CPF:</label>
+                    <label>
+                        <input type="checkbox" id="useCnpj" name="useCnpj">
+                        Usar CNPJ
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="cpf" id="cpfLabel">CPF:</label>
                     <input type="text" id="cpf" name="cpf" required>
                 </div>
                 <div class="form-group">
@@ -143,8 +149,16 @@
             <div class="form-section">
                 <h2>Valores</h2>
                 <div class="form-group">
-                    <label for="valor_total">Valor Total do Serviço:</label>
-                    <input type="text" id="valor_total" name="valor_total" required>
+                    <label for="valor_bufet">Valor do Bufê:</label>
+                    <input type="text" id="valor_bufet" name="valor_bufet" required>
+                </div>
+                <div class="form-group">
+                    <label for="valor_deslocamento">Valor do Deslocamento:</label>
+                    <input type="text" id="valor_deslocamento" name="valor_deslocamento" required>
+                </div>
+                <div class="form-group">
+                    <label for="valor_total">Valor Total:</label>
+                    <input type="text" id="valor_total" name="valor_total" readonly>
                 </div>
             </div>
 

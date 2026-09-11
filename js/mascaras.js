@@ -1,11 +1,48 @@
 // Espera o carregamento do DOM para aplicar as máscaras
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Máscara para CPF no formato 000.000.000-00
-    Inputmask({
-        mask: "999.999.999-99",
-        placeholder: "_",
-    }).mask(document.getElementById("cpf"));
+    // Referências aos elementos
+    const cpfInput = document.getElementById("cpf");
+    const useCnpjCheckbox = document.getElementById("useCnpj");
+    const cpfLabel = document.getElementById("cpfLabel");
+
+    if (cpfInput && useCnpjCheckbox) {
+        // Função para aplicar a máscara correta
+        function applyMask(useCnpj) {
+            // Remove máscara anterior
+            Inputmask.remove(cpfInput);
+            
+            if (useCnpj) {
+                // Aplica máscara CNPJ: 99.999.999/9999-99
+                cpfLabel.textContent = "CNPJ:";
+                cpfInput.placeholder = "__.__._____/____-__";
+                Inputmask({
+                    mask: "99.999.999/9999-99",
+                    placeholder: "_",
+                }).mask(cpfInput);
+            } else {
+                // Aplica máscara CPF: 999.999.999-99
+                cpfLabel.textContent = "CPF:";
+                cpfInput.placeholder = "___.___.___.____-__";
+                Inputmask({
+                    mask: "999.999.999-99",
+                    placeholder: "_",
+                }).mask(cpfInput);
+            }
+            
+            // Limpa o campo
+            cpfInput.value = "";
+            cpfInput.focus();
+        }
+
+        // Listener para mudanças na checkbox
+        useCnpjCheckbox.addEventListener("change", function () {
+            applyMask(this.checked);
+        });
+
+        // Aplicar máscara inicial (CPF)
+        applyMask(false);
+    }
 
     Inputmask({
         mask: "(99) 99999-9999",

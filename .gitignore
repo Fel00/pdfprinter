@@ -1,0 +1,2 @@
+# Ignore user-managed inventory to prevent overwriting local data
+/dados/inventario.json
