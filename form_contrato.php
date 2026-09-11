@@ -57,7 +57,8 @@
 
                 <div class="form-group">
                     <label for="observacao">Observação:</label>
-                    <textarea id="observacao" name="observacao" placeholder="Informe observações para o contrato"></textarea>
+                    <textarea id="observacao" name="observacao"
+                        placeholder="Informe observações para o contrato"></textarea>
                 </div>
             </div>
 

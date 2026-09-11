@@ -20,20 +20,20 @@ $html = "
     <br>
     
     <p><strong>Mesa fixa – $tipoBufet</strong></p>
-    " . implode("\n", array_map(function($item) {
-        return "<p>$item</p>";
-    }, $mesa_fixa)) . "
+    " . implode("\n", array_map(function ($item) {
+    return "<p>$item</p>";
+}, $mesa_fixa)) . "
     
     <p><strong>Volantes</strong></p>
-    " . implode("\n", array_map(function($item) {
-        return "<p>$item</p>";
-    }, $volantes)) . "
+    " . implode("\n", array_map(function ($item) {
+    return "<p>$item</p>";
+}, $volantes)) . "
     
     " . ($bebidas ? "<p>• Bebidas não alcoólicas</p>" : "") . "
     
-    " . (!empty($ornamentacao) ? "<p>• Ornamentação</p>" . implode("\n", array_map(function($item) {
-        return "<p>$item</p>";
-    }, $ornamentacao)) : "") . "
+    " . (!empty($ornamentacao) ? "<p>• Ornamentação</p>" . implode("\n", array_map(function ($item) {
+    return "<p>$item</p>";
+}, $ornamentacao)) : "") . "
     
     " . (!empty($loucas) ? "<p>• Louças e material para realizarmos o serviço</p><p>$loucas</p>" : "") . "
     

@@ -1,11 +1,12 @@
 <?php include 'header.php'; ?>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/forms.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/4.0.9/jquery.inputmask.bundle.min.js"></script>
-    <script src="js/mascaras.js"></script>
-    <script src="js/calculo_caju.js"></script>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/forms.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/4.0.9/jquery.inputmask.bundle.min.js"></script>
+<script src="js/mascaras.js"></script>
+<script src="js/calculo_caju.js"></script>
 </head>
+
 <body>
     <div class="form-container">
         <h1>Contrato Caju Catering</h1>
@@ -50,27 +51,30 @@
                 <div id="descricao_bufet_container" style="display: none;">
                     <div class="form-group">
                         <label for="descricao_bufet">Descrição do Bufê:</label>
-                        <textarea id="descricao_bufet" name="descricao_bufet" placeholder="Descreva sua Caju Personalizada"></textarea>
+                        <textarea id="descricao_bufet" name="descricao_bufet"
+                            placeholder="Descreva sua Caju Personalizada"></textarea>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="observacao">Observação:</label>
-                    <textarea id="observacao" name="observacao" placeholder="Informe observações para o contrato"></textarea>
+                    <textarea id="observacao" name="observacao"
+                        placeholder="Informe observações para o contrato"></textarea>
                 </div>
             </div>
 
             <!-- Cardápio -->
             <div class="form-section">
                 <h2>Cardápio</h2>
-                
+
                 <!-- Mesa Fixa -->
                 <div class="form-group">
                     <label>Mesa Fixa:</label>
                     <div id="mesa_fixa-container" class="menu-items">
                         <input type="text" name="mesa_fixa[]" placeholder="Adicione um item da mesa fixa">
                     </div>
-                    <button type="button" class="add-item" onclick="addMenuItem('mesa_fixa-container', 'mesa_fixa[]')">+ Adicionar Item</button>
+                    <button type="button" class="add-item" onclick="addMenuItem('mesa_fixa-container', 'mesa_fixa[]')">+
+                        Adicionar Item</button>
                 </div>
 
                 <!-- Volantes -->
@@ -79,13 +83,14 @@
                     <div id="volantes-container" class="menu-items">
                         <input type="text" name="volantes[]" placeholder="Adicione um item volante">
                     </div>
-                    <button type="button" class="add-item" onclick="addMenuItem('volantes-container', 'volantes[]')">+ Adicionar Item</button>
+                    <button type="button" class="add-item" onclick="addMenuItem('volantes-container', 'volantes[]')">+
+                        Adicionar Item</button>
                 </div>
 
                 <!-- Bebidas -->
                 <div class="form-group">
                     <label>
-                        <input type="checkbox" name="bebidas" value="1"> 
+                        <input type="checkbox" name="bebidas" value="1">
                         Bebidas não alcoólicas
                     </label>
                 </div>
@@ -96,7 +101,8 @@
                     <div id="ornamentacao-container" class="menu-items">
                         <input type="text" name="ornamentacao[]" placeholder="Adicione um item de ornamentação">
                     </div>
-                    <button type="button" class="add-item" onclick="addMenuItem('ornamentacao-container', 'ornamentacao[]')">+ Adicionar Item</button>
+                    <button type="button" class="add-item"
+                        onclick="addMenuItem('ornamentacao-container', 'ornamentacao[]')">+ Adicionar Item</button>
                 </div>
 
                 <!-- Louças -->
@@ -156,10 +162,11 @@
             container.appendChild(input);
         }
 
-        document.getElementById('tipo_bufet').addEventListener('change', function() {
+        document.getElementById('tipo_bufet').addEventListener('change', function () {
             var descricaoContainer = document.getElementById('descricao_bufet_container');
             descricaoContainer.style.display = this.value === 'Caju Personalizada' ? 'block' : 'none';
         });
     </script>
 </body>
+
 </html>
