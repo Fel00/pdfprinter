@@ -102,6 +102,8 @@ $html = "
     <p><strong>Cláusula 15ª.</strong> Para dirimir quaisquer controvérsias oriundas do presente contrato, as partes elegem o foro da comarca de Fortaleza, Ceará.</p>
     <br>
     
+    " . (!empty($observacao) ? "<h2>OBSERVAÇÕES</h2><p>$observacao</p><br>" : "") . "
+    
     <p>Por estarem assim justos e contratados, firmam o presente instrumento, em duas vias de igual teor, juntamente com 2 (duas) testemunhas.</p>
     
     <p>Fortaleza, $data.</p>

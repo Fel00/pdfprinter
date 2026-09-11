@@ -53,6 +53,11 @@
                         <textarea id="descricao_bufet" name="descricao_bufet" placeholder="Descreva sua Caju Personalizada"></textarea>
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <label for="observacao">Observação:</label>
+                    <textarea id="observacao" name="observacao" placeholder="Informe observações para o contrato"></textarea>
+                </div>
             </div>
 
             <!-- Cardápio -->

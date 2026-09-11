@@ -12,7 +12,7 @@ $html = "
     <br>
     
     <h2>DO OBJETO DO CONTRATO</h2>
-    <p><strong>Cláusula 1ª.</strong> É objeto do presente contrato a prestação pela CONTRATADA à CONTRATANTE dos serviços de fornecimento de Buffet: $tipoBufet $descricao_bufet + Deslocamento.</p>
+    <p><strong>Cláusula 1ª.</strong> É objeto do presente contrato a prestação pela CONTRATADA à CONTRATANTE dos serviços de fornecimento de Buffet: $tipoBufet $descricao_bufet + Deslocamento para $quantidade_pessoas pessoas.</p>
     <br>
     
     <h2>DO EVENTO</h2>
@@ -43,10 +43,10 @@ $html = "
     <p><strong>Cláusula 10ª.</strong> O serviço contratado no presente instrumento será remunerado pela quantia de $valor_bufet pelo valor do bufet, mais $valor_deslocamento pelo valor do deslocamento, totalizando uma quantia de $valor_total, devendo ser paga a quantia correspondente a 50% (cinquenta por cento) do valor no ato da assinatura do presente instrumento e o restante até o dia do evento.</p>
     
     <p><strong>Parágrafo único.</strong> O pagamento deverá ocorrer através de transferência bancária, na seguinte conta:</p>
-    <p><strong>BANCO ITAÚ<br>
-    AG 1338<br>
-    CONTA 21351-3</strong></p>
-    <p><strong>PIX: 85992078225</strong></p>
+    <p><strong>" . getConfigFeiju('banco') . "<br>
+    AG " . getConfigFeiju('agencia') . "<br>
+    CONTA " . getConfigFeiju('conta') . "</strong></p>
+    <p><strong>PIX: " . getConfigFeiju('pix') . "</strong></p>
     <p><strong>$representante<br>
     CNPJ: $cnpj</strong></p>
     <br>
@@ -77,6 +77,8 @@ $html = "
     <p><strong>Cláusula 15ª.</strong> Para dirimir quaisquer controvérsias oriundas do presente contrato, as partes elegem o foro da comarca de Fortaleza, Ceará.</p>
     <br>
     
+    " . (!empty($observacao) ? "<h2>OBSERVAÇÕES</h2><p>$observacao</p><br>" : "") . "
+    
     <p>Por estarem assim justos e contratados, firmam o presente instrumento, em duas vias de igual teor, juntamente com 2 (duas) testemunhas.</p>
     
     <p>Fortaleza, $data.</p>
@@ -88,7 +90,7 @@ $html = "
         <br><br>
         
         <p>______________________________________</p>
-        <p><strong>FEIJU DELIVERY</strong></p>
+        <p><strong>$contratadaNome</strong></p>
         
         <br><br>
         
@@ -102,7 +104,7 @@ $html = "
     </div>
 
     <div style='text-align: center; margin-top: 50px;'>
-        <img src='img/feiju.jpg' alt='Logo Feiju' style='width: 200px; height: auto;'>
+        <img src='" . getConfigFeiju('logo') . "' alt='Logo Feiju' style='width: 200px; height: auto;'>
     </div>
     
 ";

@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/config_feiju.php';
 use Mpdf\Mpdf;
 
 function formataDataExtenso($data)
@@ -39,6 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $cpf = htmlspecialchars($_POST['cpf']);
     $telefone = htmlspecialchars($_POST['telefone']);
     $telefoneCensurado = censurarTelefone($telefone);
+    $quantidade_pessoas = htmlspecialchars($_POST['quantidade_pessoas']);
     $endereco = htmlspecialchars($_POST['endereco']);
     $tipoBufet = htmlspecialchars($_POST['tipo_bufet']);
     if ($tipoBufet === "Feiju Personalizada:") {
@@ -53,10 +55,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $valor_bufet = $_POST['valor_bufet'];
     $valor_deslocamento = $_POST['valor_deslocamento'];
     $valor_total = $_POST['valor_total'];
-    $contratadaNome = "FEIJU DELIVERY";
-    $cnpj = "23.639.340/0001-62";
-    $contratadaEndereco = "Rua Delmiro Gouveia, 1281, Varjota, Fortaleza, Ceará";
-    $representante = "JULIANA PEREIRA GOUVEIA";
+    $observacao = isset($_POST['observacao']) ? trim($_POST['observacao']) : '';
+    $observacao = !empty($observacao) ? htmlspecialchars($observacao, ENT_QUOTES, 'UTF-8') : '';
+    $contratadaNome = getConfigFeiju('nome');
+    $cnpj = getConfigFeiju('cnpj');
+    $contratadaEndereco = getConfigFeiju('endereco');
+    $representante = getConfigFeiju('representante');
 
     $dataAtual = date('d-m-Y');
     $nomeArquivo = "{$contratante}_{$dataAtual}.pdf";

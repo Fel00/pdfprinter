@@ -1,11 +1,12 @@
 <?php include 'header.php'; ?>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/forms.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/4.0.9/jquery.inputmask.bundle.min.js"></script>
-    <script src="js/mascaras.js"></script>
-    <script src="js/calculo.js"></script>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/forms.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/4.0.9/jquery.inputmask.bundle.min.js"></script>
+<script src="js/mascaras.js"></script>
+<script src="js/calculo.js"></script>
 </head>
+
 <body>
     <div class="form-container">
         <h1>Contrato Feiju</h1>
@@ -33,6 +34,10 @@
                     <input type="text" id="endereco" name="endereco" required>
                 </div>
                 <div class="form-group">
+                    <label for="quantidade_pessoas">Quantidade de Pessoas:</label>
+                    <input type="number" id="quantidade_pessoas" name="quantidade_pessoas" required>
+                </div>
+                <div class="form-group">
                     <label for="tipo_bufet">Tipo de Bufê:</label>
                     <select id="tipo_bufet" name="tipo_bufet" required>
                         <option value="" disabled selected>Selecione uma opção</option>
@@ -45,8 +50,14 @@
                 <div id="descricao_bufet_container" style="display: none;">
                     <div class="form-group">
                         <label for="descricao_bufet">Descrição do Bufê:</label>
-                        <textarea id="descricao_bufet" name="descricao_bufet" placeholder="Descreva sua Feiju Personalizada"></textarea>
+                        <textarea id="descricao_bufet" name="descricao_bufet"
+                            placeholder="Descreva sua Feiju Personalizada"></textarea>
                     </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="observacao">Observação:</label>
+                    <textarea id="observacao" name="observacao" placeholder="Informe observações para o contrato"></textarea>
                 </div>
             </div>
 
@@ -93,10 +104,11 @@
     </div>
 
     <script>
-        document.getElementById('tipo_bufet').addEventListener('change', function() {
+        document.getElementById('tipo_bufet').addEventListener('change', function () {
             var descricaoContainer = document.getElementById('descricao_bufet_container');
             descricaoContainer.style.display = this.value === 'Feiju Personalizada' ? 'block' : 'none';
         });
     </script>
 </body>
-</html> 
+
+</html>

@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $descricao_bufet = '';
     }
-    
+
     // Processar cardápio
     $mesa_fixa = isset($_POST['mesa_fixa']) ? array_filter($_POST['mesa_fixa']) : [];
     $volantes = isset($_POST['volantes']) ? array_filter($_POST['volantes']) : [];
@@ -56,13 +56,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $ornamentacao = isset($_POST['ornamentacao']) ? array_filter($_POST['ornamentacao']) : [];
     $loucas = isset($_POST['loucas']) ? trim($_POST['loucas']) : '';
     $equipe = isset($_POST['equipe']) ? trim($_POST['equipe']) : '';
-    
+    $observacao = isset($_POST['observacao']) ? trim($_POST['observacao']) : '';
+    $observacao = !empty($observacao) ? htmlspecialchars($observacao, ENT_QUOTES, 'UTF-8') : '';
+
     $data = formataDataExtenso(htmlspecialchars($_POST['data']));
     $horarioInicio = htmlspecialchars($_POST['horario_inicio']);
     $horarioConclusao = htmlspecialchars($_POST['horario_conclusao']);
     $horarioChegada = htmlspecialchars($_POST['horario_chegada']);
     $valor_total = $_POST['valor_total'];
-    
+
     // Informações da Caju Catering
     $contratadaNome = getConfigCaju('nome');
     $cnpj = getConfigCaju('cnpj');
