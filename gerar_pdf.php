@@ -51,18 +51,42 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $quantidade_pessoas = htmlspecialchars($_POST['quantidade_pessoas']);
     $endereco = htmlspecialchars($_POST['endereco']);
     $tipoBufet = htmlspecialchars($_POST['tipo_bufet']);
-    if ($tipoBufet === "Feiju Personalizada:") {
+    if ($tipoBufet === "Feiju Personalizada") {
         $descricao_bufet = $_POST['descricao_bufet'];
     } else {
         $descricao_bufet = '';
     }
+    $observacao = isset($_POST['observacao']) ? trim($_POST['observacao']) : '';
+    $observacao = !empty($observacao) ? htmlspecialchars($observacao, ENT_QUOTES, 'UTF-8') : '';
     $data = formataDataExtenso(htmlspecialchars($_POST['data']));
     $horarioInicio = htmlspecialchars($_POST['horario_inicio']);
     $horarioConclusao = htmlspecialchars($_POST['horario_conclusao']);
     $horarioChegada = htmlspecialchars($_POST['horario_chegada']);
-    $valor_bufet = $_POST['valor_bufet'];
-    $valor_deslocamento = $_POST['valor_deslocamento'];
-    $valor_total = $_POST['valor_total'];
+
+    function parseCurrency($str)
+    {
+        $str = trim((string) $str);
+        $str = preg_replace('/[^0-9,\.\-]/u', '', $str);
+        if (strpos($str, ',') !== false && strpos($str, '.') !== false) {
+            $str = str_replace('.', '', $str);
+            $str = str_replace(',', '.', $str);
+        } elseif (strpos($str, ',') !== false && strpos($str, '.') === false) {
+            $str = str_replace(',', '.', $str);
+        }
+        return is_numeric($str) ? (float) $str : 0.0;
+    }
+
+    function formatBR($num)
+    {
+        return 'R$ ' . number_format($num, 2, ',', '.');
+    }
+
+    $valor_bufet_num = parseCurrency($_POST['valor_bufet'] ?? '0');
+    $valor_deslocamento_num = parseCurrency($_POST['valor_deslocamento'] ?? '0');
+    $valor_total_num = $valor_bufet_num + $valor_deslocamento_num;
+    $valor_bufet = formatBR($valor_bufet_num);
+    $valor_deslocamento = formatBR($valor_deslocamento_num);
+    $valor_total = formatBR($valor_total_num);
     $contratadaNome = "FEIJU DELIVERY";
     $cnpj = "23.639.340/0001-62";
     $contratadaEndereco = "Rua Delmiro Gouveia, 1281, Varjota, Fortaleza, Ceará";

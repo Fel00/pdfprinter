@@ -2,8 +2,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const valorBufetInput = document.getElementById("valor_bufet");
     const valorDeslocamentoInput = document.getElementById("valor_deslocamento");
     const valorTotalInput = document.getElementById("valor_total");
+    const tipoBufetSelect = document.getElementById("tipo_bufet");
+    const descricaoBufetContainer = document.getElementById("descricao_bufet_container");
+    const descricaoBufetInput = document.getElementById("descricao_bufet");
 
-    // Máscara de moeda para os campos
+    if (!valorBufetInput || !valorDeslocamentoInput || !valorTotalInput) {
+        return;
+    }
+
     const currencyMask = {
         alias: "currency",
         prefix: "R$ ",
@@ -16,30 +22,38 @@ document.addEventListener("DOMContentLoaded", function () {
         clearMaskOnLostFocus: true,
     };
 
-    // Aplica máscara nos campos
     Inputmask(currencyMask).mask(valorBufetInput);
     Inputmask(currencyMask).mask(valorDeslocamentoInput);
-    Inputmask(currencyMask).mask(valorTotalInput);
 
-    // Função para calcular o valor total
     function calcularValorTotal() {
-        const valorBufet = parseFloat(valorBufetInput.inputmask.unmaskedvalue() || 0); // Remove máscara e converte para número
-        const valorDeslocamento = parseFloat(valorDeslocamentoInput.inputmask.unmaskedvalue() || 0); // Remove máscara e converte para número
-        const valorTotal = valorBufet + valorDeslocamento; // Soma os valores
+        const valorBufet = parseFloat(valorBufetInput.inputmask.unmaskedvalue() || 0);
+        const valorDeslocamento = parseFloat(valorDeslocamentoInput.inputmask.unmaskedvalue() || 0);
+        const valorTotal = valorBufet + valorDeslocamento;
 
-        // Atualiza o campo com o total formatado
-        valorTotalInput.value = `${valorTotal.toLocaleString("pt-BR", {
+        valorTotalInput.value = valorTotal.toLocaleString("pt-BR", {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2,
-        })}`;
+        });
     }
 
-    // Adiciona eventos para recalcular o valor total sempre que houver input ou mudança
     valorBufetInput.addEventListener("input", calcularValorTotal);
-    valorBufetInput.addEventListener("blur", calcularValorTotal); // Garante atualização ao perder o foco
+    valorBufetInput.addEventListener("blur", calcularValorTotal);
     valorDeslocamentoInput.addEventListener("input", calcularValorTotal);
     valorDeslocamentoInput.addEventListener("blur", calcularValorTotal);
 
-    // Calcula o total ao carregar a página
+    if (tipoBufetSelect && descricaoBufetContainer && descricaoBufetInput) {
+        function atualizarDescricaoBufet() {
+            const mostrar = tipoBufetSelect.value === "Feiju Personalizada";
+            descricaoBufetContainer.style.display = mostrar ? "block" : "none";
+            descricaoBufetInput.required = mostrar;
+            if (!mostrar) {
+                descricaoBufetInput.value = "";
+            }
+        }
+
+        tipoBufetSelect.addEventListener("change", atualizarDescricaoBufet);
+        atualizarDescricaoBufet();
+    }
+
     calcularValorTotal();
 });
