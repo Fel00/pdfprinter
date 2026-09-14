@@ -4,7 +4,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/4.0.9/jquery.inputmask.bundle.min.js"></script>
 <script src="js/mascaras.js"></script>
-<script src="js/calculo_caju.js"></script>
+<script src="js/calculo.js"></script>
 </head>
 
 <body>
@@ -149,7 +149,7 @@
             <div class="form-section">
                 <h2>Valores</h2>
                 <div class="form-group">
-                    <label for="valor_bufet">Valor do Bufê:</label>
+                    <label for="valor_bufet">Valor do Bufet:</label>
                     <input type="text" id="valor_bufet" name="valor_bufet" required>
                 </div>
                 <div class="form-group">
